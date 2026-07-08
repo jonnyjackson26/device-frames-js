@@ -58,17 +58,14 @@ Every push and pull request to `main` runs [`.github/workflows/ci.yml`](.github/
 ### Publish to npm
 This project publishes to npm using GitHub Actions via the [`.github/workflows/publish.yml`](.github/workflows/publish.yml) workflow, triggered when a GitHub Release is published (`release.published`). Publishing uses npm's [Trusted Publisher](https://docs.npmjs.com/trusted-publishers) (OIDC) — no `NPM_TOKEN` secret required.
 
-1. Update version in `package.json`.
+1. Update version in `package.json` (for example, `X.Y.Z`).
 2. Commit and push to `main`.
 3. Create and push a matching git tag:
-   - `git tag v0.1.1`
-   - `git push origin v0.1.1`
-4. In GitHub:
-   - Open **Releases** → **Draft a new release**
-   - Choose tag `v0.1.1`
-   - Set release title (for example, `v0.1.1`)
-   - Add release notes
-   - Click **Publish release**
+   - `git tag vX.Y.Z`
+   - `git push origin vX.Y.Z`
+4. Publish a GitHub Release for that tag, either:
+   - In GitHub: open **Releases** → **Draft a new release** → choose tag `vX.Y.Z` → set a release title → add release notes → **Publish release**, or
+   - Via the [`gh` CLI](https://cli.github.com/): `gh release create vX.Y.Z --title "vX.Y.Z" --notes "..."`
 5. GitHub Actions runs `Publish to npm` and publishes the package to npm.
 
 ---

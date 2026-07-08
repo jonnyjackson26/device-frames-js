@@ -1,6 +1,6 @@
 {
   "name": "device-frames",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Core library for applying device frames to screenshots.",
   "type": "module",
   "main": "./dist/index.js",
