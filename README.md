@@ -69,6 +69,6 @@ This project publishes to npm using GitHub Actions via the [`.github/workflows/p
 5. GitHub Actions runs `Publish to npm` and publishes the package to npm.
 
 ---
-[Read more about this project on my website](https://jonny-jackson.com/posts/device-frames/)
-[npm](https://www.npmjs.com/package/device-frames)
-[device-frames-media Github repo](https://github.com/jonnyjackson26/device-frames-media)
+[Read more about this project on my website](https://jonny-jackson.com/posts/device-frames/)  
+[npm](https://www.npmjs.com/package/device-frames)  
+[device-frames-media Github repo](https://github.com/jonnyjackson26/device-frames-media)  
