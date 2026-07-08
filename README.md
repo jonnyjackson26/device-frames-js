@@ -1,4 +1,4 @@
-# device-frames-js [View on npm](https://www.npmjs.com/package/device-frames-js)
+# device-frames [View on npm](https://www.npmjs.com/package/device-frames)
 
 TypeScript/Node core library for applying device frames to screenshots and retrieving up-to-date media of device frame PNGs (with metadata)
 
@@ -7,11 +7,11 @@ TypeScript/Node core library for applying device frames to screenshots and retri
 ### Usage Example
 
 ```bash
-npm install device-frames-js
+npm install device-frames
 ```
 
 ```ts
-import { applyFrame, listDevices } from "device-frames-js";
+import { applyFrame, listDevices } from "device-frames";
 
 // List devices
 const allDevices = await listDevices();
@@ -22,7 +22,7 @@ await applyFrame(
   "16-pro-max",
   "black-titanium",
   "output/framed.png",
-  { category: "ios" }
+  { category: "apple-iphone" }
 );
 ```
 
@@ -48,12 +48,15 @@ npm run build          # compiles src/ to dist/
 Install the built package locally and do a quick import check:
 ```bash
 npm pack
-npm install ./device-frames-js-*.tgz
-node -e "import('device-frames-js').then(m => m.listDevices().then(d => console.log(d.length)))"
+npm install ./device-frames-*.tgz
+node -e "import('device-frames').then(m => m.listDevices().then(d => console.log(d.length)))"
 ```
 
+### CI
+Every push and pull request to `main` runs [`.github/workflows/ci.yml`](.github/workflows/ci.yml), which builds and runs the test suite on Node 18, 20, and 22.
+
 ### Publish to npm
-This project publishes to npm using GitHub Actions via the [`.github/workflows/publish.yml`](.github/workflows/publish.yml) workflow, triggered when a GitHub Release is published (`release.published`).
+This project publishes to npm using GitHub Actions via the [`.github/workflows/publish.yml`](.github/workflows/publish.yml) workflow, triggered when a GitHub Release is published (`release.published`). Publishing uses npm's [Trusted Publisher](https://docs.npmjs.com/trusted-publishers) (OIDC) — no `NPM_TOKEN` secret required.
 
 1. Update version in `package.json`.
 2. Commit and push to `main`.
@@ -70,5 +73,5 @@ This project publishes to npm using GitHub Actions via the [`.github/workflows/p
 
 ---
 [Read more about this project on my website](https://jonny-jackson.com/posts/device-frames/)
-[npm](https://www.npmjs.com/package/device-frames-js)
+[npm](https://www.npmjs.com/package/device-frames)
 [device-frames-media Github repo](https://github.com/jonnyjackson26/device-frames-media)
